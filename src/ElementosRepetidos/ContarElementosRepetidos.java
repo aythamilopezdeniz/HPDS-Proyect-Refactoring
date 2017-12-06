@@ -1,3 +1,5 @@
+package ElementosRepetidos;
+
 public class ContarElementosRepetidos{
     private static int A=10;
     private static int B=20;

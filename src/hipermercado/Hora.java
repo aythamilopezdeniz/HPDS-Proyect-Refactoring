@@ -20,7 +20,7 @@ public class Hora {
         this.segundos = 0;
     }
 
-    public static int dameHora() {
+    public static int dameHoras() {
         return GregorianCalendar.getInstance().get(Calendar.HOUR_OF_DAY);
     }
 

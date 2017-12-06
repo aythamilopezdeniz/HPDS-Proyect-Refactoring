@@ -23,7 +23,7 @@ public class Cola {
         } catch (InterruptedException ex) {}
         cola.add(cliente);
         System.out.print("Cliente "+cliente.dameNombre()+" añadido al final de la cola a las ");
-        System.out.print(time(this.hora));
+        System.out.print(time(this.hora).imprimirHora());
         System.out.println(".");
         if(cola.size()>maximoCola)
             maximoCola=cola.size();
@@ -34,7 +34,7 @@ public class Cola {
         if(cerrada)return;
         cola.add(0, cliente);
         System.out.print("Cliente "+cliente.dameNombre()+" añadido al principio de la cola a las ");
-        System.out.print(time(this.hora));
+        System.out.print(time(this.hora).imprimirHora());
         System.out.println(".");
         if(cola.size()>maximoCola)
             maximoCola=cola.size();
@@ -50,13 +50,13 @@ public class Cola {
         }
         if(cola.isEmpty())return null;
         System.out.print("Sacando a "+cola.get(0).dameNombre()+" de la cola a las ");
-        System.out.print(time(this.hora));
+        System.out.print(time(this.hora).imprimirHora());
         System.out.println(".");
         return cola.remove(0);
     }
 
-    private String time(Hora hora) {
-        return new Hora(hora.dameHora(), hora.dameMinutos(), hora.dameSegundos()).imprimirHora();
+    private Hora time(Hora hora) {
+        return new Hora(hora.dameHoras(), hora.dameMinutos(), hora.dameSegundos());
     }
 
     public synchronized void cerrar(){

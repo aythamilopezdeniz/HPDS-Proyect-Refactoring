@@ -25,7 +25,7 @@ public class Caja extends Thread {
             try {
                 sleep((long) ((contabilidadCaja/10)*1000));
                 System.out.print("Atendiendo a "+cliente.toString()+" Hora ");
-                System.out.print(time(this.hora));
+                System.out.print(time(this.hora).imprimirHora());
                 System.out.print(".");
                 System.out.println(" Cliente cobrado.");
             } catch (InterruptedException ex) {
@@ -41,7 +41,7 @@ public class Caja extends Thread {
         }
     }
 
-    private String time(Hora hora) {
-        return new Hora(hora.dameHora(), hora.dameMinutos(), hora.dameSegundos()).imprimirHora();
+    private Hora time(Hora hora) {
+        return new Hora(hora.dameHoras(), hora.dameMinutos(), hora.dameSegundos());
     }
 }

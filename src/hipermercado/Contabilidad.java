@@ -1,24 +1,23 @@
 package hipermercado;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
-import static hipermercado.Main.dameHora;
-
 public class Contabilidad {
+    private Hora hora;
     private double saldo;
 
     public Contabilidad() {
         this.saldo=0;
+        this.hora = new Hora();
     }
 
     public synchronized void añadeSaldo(double Saldo){
         this.saldo+=Saldo;
         System.out.print("Añadiendo saldo a la contabilidad "+Saldo+"€ a las ");
-        System.out.print(dameHora(GregorianCalendar.getInstance().get(Calendar.HOUR_OF_DAY),
-                GregorianCalendar.getInstance().get(Calendar.MINUTE),
-                GregorianCalendar.getInstance().get(Calendar.SECOND)));
+        System.out.print(time(this.hora));
         System.out.println(".");
+    }
+
+    private String time(Hora hora) {
+        return new Hora(hora.dameHora(), hora.dameMinutos(), hora.dameSegundos()).imprimirHora();
     }
 
     public synchronized double dameSaldo(){

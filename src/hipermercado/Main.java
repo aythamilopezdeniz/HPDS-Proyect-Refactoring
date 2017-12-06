@@ -93,14 +93,4 @@ public class Main {
             }
         }.start();
     }
-
-    public static String dameHora(int hora, int minutos, int segundos) {
-        if(minutos<10&&segundos<10)
-            return hora+":0"+minutos+":0"+segundos;
-        else if(minutos>=10&&segundos<10)
-            return hora+":"+minutos+":0"+segundos;
-        else if(minutos < 10)
-            return hora+":0"+minutos+":"+segundos;
-        return hora+":"+minutos+":"+segundos;
-    }
 }

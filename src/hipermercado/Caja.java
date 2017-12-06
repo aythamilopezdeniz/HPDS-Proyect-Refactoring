@@ -1,20 +1,17 @@
 package hipermercado;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
-import static hipermercado.Main.dameHora;
-
-public class Caja extends Thread{
+public class Caja extends Thread {
     private final Contabilidad contabilidad;
     private static int idUnique=0;
     private final Cola cola;
-    private int id=0;
+    private Hora hora;
+    private int id;
 
     public Caja(Cola Cola, Contabilidad Contabilidad) {
         this.contabilidad=Contabilidad;
         this.cola=Cola;
         this.id=idUnique++;
+        this.hora = new Hora();
     }
 
     @Override
@@ -28,9 +25,7 @@ public class Caja extends Thread{
             try {
                 sleep((long) ((contabilidadCaja/10)*1000));
                 System.out.print("Atendiendo a "+cliente.toString()+" Hora ");
-                System.out.print(dameHora(GregorianCalendar.getInstance().get(Calendar.HOUR_OF_DAY),
-                        GregorianCalendar.getInstance().get(Calendar.MINUTE),
-                        GregorianCalendar.getInstance().get(Calendar.SECOND)));
+                System.out.print(time(this.hora));
                 System.out.print(".");
                 System.out.println(" Cliente cobrado.");
             } catch (InterruptedException ex) {
@@ -44,5 +39,9 @@ public class Caja extends Thread{
             System.out.println("Cerrando caja "+id+" y registrando contabilidad.");
             contabilidad.añadeSaldo(contabilidadCaja);
         }
+    }
+
+    private String time(Hora hora) {
+        return new Hora(hora.dameHora(), hora.dameMinutos(), hora.dameSegundos()).imprimirHora();
     }
 }

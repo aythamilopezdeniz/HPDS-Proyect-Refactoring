@@ -17,7 +17,8 @@ public class Contabilidad {
     }
 
     private Hora time(Hora hora) {
-        return new Hora(hora.dameHoras(), hora.dameMinutos(), hora.dameSegundos());
+        return new Hora(
+                hora.dameHoras(), hora.dameMinutos(), hora.dameSegundos());
     }
 
     public synchronized double dameSaldo(){

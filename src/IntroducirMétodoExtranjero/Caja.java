@@ -1,4 +1,4 @@
-package hipermercado;
+package IntroducirMétodoExtranjero;
 
 public class Caja extends Thread {
     private final Contabilidad contabilidad;

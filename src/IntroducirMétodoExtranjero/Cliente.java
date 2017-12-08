@@ -1,4 +1,4 @@
-package hipermercado;
+package IntroducirMétodoExtranjero;
 //NO MODIFIQUE ESTA CLASE
 class Cliente{
     private String nombre;

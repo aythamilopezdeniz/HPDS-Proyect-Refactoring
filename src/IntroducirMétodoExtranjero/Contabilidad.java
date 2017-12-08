@@ -1,4 +1,4 @@
-package hipermercado;
+package IntroducirMétodoExtranjero;
 
 public class Contabilidad {
     private Hora hora;

@@ -1,4 +1,4 @@
-package ElementosRepetidos;
+package ExtraerMétodo;
 
 public class ContarElementosRepetidos{
     private static int A=10;

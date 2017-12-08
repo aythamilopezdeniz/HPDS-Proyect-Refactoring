@@ -1,4 +1,4 @@
-package hipermercado;
+package IntroducirMétodoExtranjero;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

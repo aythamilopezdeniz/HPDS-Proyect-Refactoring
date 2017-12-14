@@ -1,15 +1,19 @@
 package EncapsularCampo;
 
 public class Sucesiones {
-    public static int vector[] = new int[100];
+    public int vector[];
 
-    private static void llenarArreglo() {
+    public Sucesiones() {
+        this.vector = new int[100];
+    }
+
+    public void llenarArreglo(int[] vector) {
         for (int i = 0; i < vector.length; i++) {
             vector[i] = (i + 1);
         }
     }
 
-     private static void arregloSucesivo() {
+     public void arregloSucesivo(int[] vector) {
         int b = 0;
         for (int i = 0; i < vector.length; i++) {
             vector[i] = b + vector[i];
@@ -17,15 +21,9 @@ public class Sucesiones {
         }
     }
 
-    private static void imprimirArreglo() {
+    public void imprimirArreglo(int[] vector) {
         for (int a : vector)
             System.out.print(a + " ");
         System.out.println("");
-    }
-
-    public static void main(String[] args) {
-        llenarArreglo();
-        arregloSucesivo();
-        imprimirArreglo();
     }
 }

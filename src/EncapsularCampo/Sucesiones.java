@@ -1,10 +1,14 @@
 package EncapsularCampo;
 
 public class Sucesiones {
-    public int vector[];
+    private int vector[];
 
     public Sucesiones() {
         this.vector = new int[100];
+    }
+
+    public int[] getVector() {
+        return vector;
     }
 
     public void llenarArreglo(int[] vector) {

@@ -5,30 +5,29 @@ import java.util.Random;
 public class SensacionTermica {
 
     public static void main(String[] args) {
-        int temp;
-        String mensaje = "";
+        int temp = generaTemperatura();
+        mostrarTemperatura(temp);
+    }
+
+    private static int generaTemperatura(){
         Random r = new Random();
-        temp = r.nextInt(55) - 10;
+        return r.nextInt(55) - 10;
+    }
 
-        if (temp < 10) {
-            mensaje = "Hace mucho frío.";
-        } else {
-            if (temp < 15) {
-                mensaje = "Hace poco frío.";
-            } else {
-                if (temp < 25) {
-                    mensaje = "Hace una temperatura normal.";
-                } else {
-                    if (temp < 30) {
-                        mensaje = "Hace poco calor.";
-                    } else {
-                        mensaje = "Hace mucho calor.";
-                    }
-                }
-            }
-        }
+    private static void mostrarTemperatura(int temp){
         System.out.printf("La temperatura actual es de %d grados.", temp);
-        System.out.println("\n" + mensaje);
+        System.out.print(estadoDelTiempo(temp));
+    }
 
+    private static String estadoDelTiempo(int temp){
+        if(temp< 10)
+            return"\nHace mucho frío.";
+        if(temp< 15)
+            return"\nHace poco frío.";
+        if(temp< 25)
+            return"\nHace una temperatura normal.";
+        if(temp< 30)
+            return"\nHace poco calor.";
+        return "\nHace mucho calor.";
     }
 }

@@ -5,11 +5,7 @@ public class Masajista extends SeleccionFutbol {
     private int aniosExperiencia;
 
     public Masajista(int id, String nombre, String apellidos, int edad, String titulacion, int aniosExperiencia) {
-        //super(id, nombre, apellidos, edad);
-        setId(id);
-        setNombre(nombre);
-        setApellidos(apellidos);
-        setEdad(edad);
+        super(id, nombre, apellidos, edad);
         this.titulacion = titulacion;
         this.aniosExperiencia = aniosExperiencia;
     }

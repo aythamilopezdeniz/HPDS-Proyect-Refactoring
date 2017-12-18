@@ -6,9 +6,6 @@ public class SeleccionFutbol {
     private String Apellidos;
     private int Edad;
 
-    public SeleccionFutbol() {
-    }
-
     public SeleccionFutbol(int id, String nombre, String apellidos, int edad) {
         this.id = id;
         this.Nombre = nombre;
